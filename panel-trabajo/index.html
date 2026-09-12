@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Taller</title>
+  <link rel="stylesheet" href="css/styles.css?v=20260912">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo-icon">PT</div>
+      <div class="brand-text">Panel Taller<small>Gestión de servicios</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Principal</div>
+      <button class="nav-item active" data-section="dashboard">
+        <span class="nav-icon">📊</span> Dashboard
+      </button>
+      <div class="nav-section-label">Gestión</div>
+      <button class="nav-item" data-section="clients">
+        <span class="nav-icon">👥</span> Clientes
+      </button>
+      <button class="nav-item" data-section="services">
+        <span class="nav-icon">⚙️</span> Servicios
+      </button>
+      <button class="nav-item" data-section="appointments">
+        <span class="nav-icon">📅</span> Turnos
+        <span class="nav-badge">5</span>
+      </button>
+      <button class="nav-item" data-section="inventory">
+        <span class="nav-icon">📦</span> Inventario
+      </button>
+      <div class="nav-section-label">Sistema</div>
+      <button class="nav-item" data-section="settings">
+        <span class="nav-icon">⚙️</span> Configuración
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-avatar">FR</div>
+      <div>
+        <div class="user-name">Franco León</div>
+        <div class="user-role">Administrador</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <button id="mobile-menu-btn" style="display:none;font-size:20px;background:none;border:none;color:var(--text-primary);cursor:pointer;">☰</button>
+      <div>
+        <h1>Panel Principal</h1>
+        <div class="breadcrumb">Inicio / Dashboard</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Buscar...">
+      </div>
+      <button class="header-btn notif-btn">🔔<span class="notif-dot"></span></button>
+      <button class="header-btn settings-btn">⚙️</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main" id="main-content">
+    <!-- Content rendered by JS -->
+  </main>
+
+  <!-- TOASTS -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- LIBRARY + MAIN -->
+  <script src="js/lib/manifest.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
