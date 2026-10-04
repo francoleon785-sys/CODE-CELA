@@ -1,0 +1,17 @@
+{
+  "duration": 18,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#errline", "bySec": 2.2 },
+    { "kind": "appearsBy", "selector": "#tagline", "bySec": 4.6 },
+    { "kind": "appearsBy", "selector": "#p1", "bySec": 9.4 },
+    { "kind": "appearsBy", "selector": "#p2", "bySec": 11.6 },
+    { "kind": "appearsBy", "selector": "#p3", "bySec": 13.8 },
+    { "kind": "appearsBy", "selector": "#url", "bySec": 15.9 },
+    { "kind": "before", "a": "#errline", "b": "#tagline" },
+    { "kind": "before", "a": "#tagline", "b": "#s3-head" },
+    { "kind": "before", "a": "#s3-head", "b": "#url" },
+    { "kind": "staysInFrame", "selector": "#term" },
+    { "kind": "staysInFrame", "selector": "#p1" },
+    { "kind": "staysInFrame", "selector": "#url" }
+  ]
+}

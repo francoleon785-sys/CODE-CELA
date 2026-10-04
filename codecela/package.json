@@ -1,0 +1,20 @@
+{
+  "name": "codecela",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web de CodeCela — diseño freelance para negocios de Celaya, Gto.",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "validate": "npx html-validate \"**/*.html\"",
+    "links": "npx linkinator http://localhost:8080 --recurse --skip \"fonts.googleapis.com,fonts.gstatic.com,mailto:\"",
+    "lighthouse": "npx lhci autorun",
+    "check": "npm run validate && npm run links",
+    "build": "echo \"Static site - no build needed\""
+  },
+  "devDependencies": {
+    "html-validate": "^8.0.0",
+    "linkinator": "^4.0.0",
+    "lighthouse": "^12.0.0",
+    "@lhci/cli": "^0.13.0"
+  }
+}

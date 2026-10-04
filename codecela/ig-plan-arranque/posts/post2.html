@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>CodeCela — Post 2 · Beneficios</title>
+  <style>
+    @font-face { font-family: "Space Grotesk"; src: url("../composition/assets/fonts/SpaceGrotesk-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Space Grotesk"; src: url("../composition/assets/fonts/SpaceGrotesk-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Space Grotesk"; src: url("../composition/assets/fonts/SpaceGrotesk-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("../composition/assets/fonts/Inter-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("../composition/assets/fonts/Inter-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("../composition/assets/fonts/Inter-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { width: 1080px; height: 1080px; overflow: hidden; }
+    .post {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      background: #0a1128;
+      color: #f2f6ff;
+      font-family: "Inter", system-ui, sans-serif;
+      padding: 72px 72px 64px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .glow {
+      position: absolute;
+      width: 900px; height: 900px;
+      right: -340px; bottom: -340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61, 255, 162, 0.16), transparent 62%);
+      pointer-events: none;
+    }
+    .ghost {
+      position: absolute;
+      left: -30px; top: 380px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 240px;
+      letter-spacing: -6px;
+      color: rgba(0, 212, 255, 0.05);
+      pointer-events: none;
+    }
+    .top {
+      position: relative; z-index: 2;
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .wordmark { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -1px; }
+    .wm-dot { color: #00d4ff; }
+    .meta { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 20px; color: #8fa3c7; letter-spacing: 1px; }
+    .rule { position: relative; z-index: 2; height: 2px; background: rgba(242,246,255,0.08); margin-top: 26px; }
+    .body { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .kicker {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 24px; letter-spacing: 3px; color: #00d4ff;
+    }
+    .headline {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 84px;
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-top: 30px;
+      max-width: 880px;
+    }
+    .headline em { font-style: normal; color: #00d4ff; }
+    .rows { display: flex; flex-direction: column; gap: 24px; margin-top: 56px; }
+    .row {
+      display: flex; align-items: center; gap: 28px;
+      background: #0f1b3d;
+      border: 2px solid rgba(242,246,255,0.08);
+      border-radius: 14px;
+      padding: 32px 38px;
+    }
+    .row-num {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 24px; letter-spacing: 3px; color: #00d4ff;
+    }
+    .row-text { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 42px; letter-spacing: -1px; }
+    .row-text span { color: #3dffa2; }
+    .foot {
+      position: relative; z-index: 2;
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 22px; color: #3dffa2; letter-spacing: 2px;
+      margin-top: 48px;
+    }
+    .foot .url { color: #8fa3c7; }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="glow"></div>
+    <div class="ghost">24/7</div>
+
+    <div class="top">
+      <div class="wordmark">&lt;/&gt; CodeCela<span class="wm-dot">.</span></div>
+      <div class="meta">Celaya · Gto.</div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="body">
+      <div class="kicker">// qué obtienes</div>
+      <h1 class="headline">Una página que trabaja <em>24/7</em> por tu negocio.</h1>
+      <div class="rows">
+        <div class="row">
+          <div class="row-num">01</div>
+          <div class="row-text">Tu menú, servicios y precios <span>visibles</span></div>
+        </div>
+        <div class="row">
+          <div class="row-num">02</div>
+          <div class="row-text">Botón de WhatsApp <span>directo</span></div>
+        </div>
+        <div class="row">
+          <div class="row-num">03</div>
+          <div class="row-text">Carga en <span>menos de 3 s</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span>desde $2,500 MXN</span>
+      <span class="url">codecela.vercel.app</span>
+    </div>
+  </div>
+</body>
+</html>

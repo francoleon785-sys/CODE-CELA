@@ -1,0 +1,69 @@
+name: Validate & Deploy — CodeCela
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: codecela-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: HTML · Links · Lighthouse
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./codecela
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar herramientas
+        run: npm ci
+
+      - name: Validar HTML
+        run: npx html-validate "**/*.html"
+
+      - name: Sirve sitio estático
+        run: |
+          python3 -m http.server 8080 &
+          sleep 2
+
+      - name: Revisar enlaces rotos
+        run: npx linkinator http://localhost:8080 --recurse --skip "fonts.googleapis.com,fonts.gstatic.com,mailto:" --timeout 10000
+
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          configPath: ./lighthouserc.js
+          uploadOnly: true
+
+  deploy:
+    name: Desplegar en Vercel
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Desplegar
+        uses: vercel/vercel-action@v30
+        with:
+          working-directory: ./codecela
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          prod: true

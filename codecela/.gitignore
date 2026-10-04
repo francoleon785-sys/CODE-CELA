@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+*.local
+.vercel/
+assets/photos/source/
+coverage/
+.lighthouseci/
+*.log
+
+.vercel
+.env*

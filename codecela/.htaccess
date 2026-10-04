@@ -1,0 +1,20 @@
+<!-- ============================================================================
+     .htaccess para Apache (Hostinger / LiteSpeed).
+     Copia como .htaccess a la raíz del proyecto.
+     ============================================================================ -->
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|mjs|json)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(webp|jpg|jpeg|png|svg|avif|ico|woff|woff2)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+  AddType application/javascript .js
+  AddType text/css .css
+</IfModule>

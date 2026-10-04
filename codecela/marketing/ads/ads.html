@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CodeCela — Creativos</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A1128;--bg2:#0F1B3D;--cyan:#00D4FF;--green:#3DFFA2;--text:#F2F6FF;--muted:#8FA3C7;--line:#16264F;--surface:#122045;--surface2:#1A2B55}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#05070f;font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}
+.canvas{display:none;position:relative;overflow:hidden;background:
+  radial-gradient(1100px 600px at 82% 18%, rgba(0,212,255,.22), transparent 60%),
+  radial-gradient(900px 700px at 12% 88%, rgba(61,255,162,.10), transparent 60%),
+  linear-gradient(135deg,var(--bg2),var(--bg) 60%);}
+.canvas.on{display:flex;flex-direction:column}
+.canvas::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 105px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/150px 100%;
+  opacity:.45;pointer-events:none}
+.canvas::after{content:"";position:absolute;inset:28px;border:2px dashed rgba(42,58,99,.9);border-radius:26px;pointer-events:none}
+.inner{position:relative;z-index:2;display:flex;flex-direction:column;width:100%;height:100%;padding:96px 84px}
+.mono{font-family:'JetBrains Mono',monospace}
+.sg{font-family:'Space Grotesk',sans-serif}
+.logo{display:flex;align-items:center;gap:22px}
+.logo .mark{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--cyan);font-size:64px;letter-spacing:-2px}
+.logo .word{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--text);font-size:56px;letter-spacing:-1px}
+.url{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:30px;letter-spacing:.08em}
+.eyebrow{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:30px;letter-spacing:.28em;text-transform:uppercase}
+.dek{color:var(--muted);font-size:36px;line-height:1.45}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:40px}
+.pill{font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--green);border:2px solid rgba(61,255,162,.4);border-radius:999px;padding:14px 30px;background:rgba(61,255,162,.07)}
+.glow-cyan{box-shadow:0 0 60px rgba(0,212,255,.35)}
+ul.check{list-style:none;display:grid;gap:26px}
+ul.check li{display:flex;gap:20px;align-items:flex-start;font-size:34px;color:var(--text);line-height:1.35}
+ul.check li::before{content:"✓";color:var(--green);font-weight:700;font-size:34px}
+
+/* S1 marca */
+.s1 .inner{justify-content:center;gap:44px;text-align:center;align-items:center}
+.s1 h1{font-size:110px;font-weight:700;letter-spacing:-3px;line-height:1.02;color:var(--text)}
+.s1 h1 em{font-style:normal;color:var(--green)}
+.s1 .rule{width:180px;height:6px;background:linear-gradient(90deg,var(--cyan),var(--green));border-radius:99px}
+
+/* S2 plan */
+.s2 .price{display:flex;align-items:baseline;gap:22px;margin:30px 0 10px}
+.s2 .price b{font-family:'Space Grotesk',sans-serif;font-size:170px;font-weight:700;color:var(--text);letter-spacing:-6px}
+.s2 .price span{font-family:'JetBrains Mono',monospace;font-size:44px;color:var(--cyan)}
+.s2 .card{background:rgba(18,32,69,.72);border:3px solid var(--cyan);border-radius:30px;padding:56px 54px;box-shadow:0 0 70px rgba(0,212,255,.25)}
+.s2 .note{margin-top:36px;font-size:30px;color:var(--green);line-height:1.4;font-weight:500}
+.s2 h2{font-size:64px;color:var(--text);font-weight:700;letter-spacing:-1.5px;margin-bottom:8px}
+
+/* S3 antes/después */
+.s3 .grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:56px;flex:1}
+.s3 .panel{border-radius:28px;padding:52px 44px;display:flex;flex-direction:column;gap:34px}
+.s3 .bad{background:rgba(18,32,69,.55);border:2px solid var(--surface2)}
+.s3 .good{background:rgba(0,212,255,.07);border:3px solid var(--cyan);box-shadow:0 0 50px rgba(0,212,255,.2)}
+.s3 .tag{font-family:'JetBrains Mono',monospace;font-size:30px;letter-spacing:.3em;text-transform:uppercase}
+.s3 .bad .tag{color:var(--muted)}
+.s3 .good .tag{color:var(--cyan)}
+.s3 .item{font-size:38px;line-height:1.3;font-weight:600}
+.s3 .bad .item{color:#71839f;text-decoration:line-through;text-decoration-color:rgba(113,131,159,.6);text-decoration-thickness:3px}
+.s3 .good .item{color:var(--text)}
+.s3 h2{font-size:88px;font-weight:700;color:var(--text);letter-spacing:-2.5px;line-height:1.04}
+
+/* Stories */
+.st .inner{padding:150px 84px 130px}
+.st h2{font-size:130px;font-weight:700;letter-spacing:-4px;line-height:1.03;color:var(--text)}
+.st h2 .hl{color:var(--cyan)}
+.st h2 .hlg{color:var(--green)}
+.st .kicker{font-family:'JetBrains Mono',monospace;font-size:36px;letter-spacing:.3em;color:var(--cyan);text-transform:uppercase;margin-bottom:36px}
+.st .sub{font-size:46px;color:var(--muted);line-height:1.4;margin-top:44px}
+.st .big-list{display:grid;gap:44px;margin-top:70px}
+.st .big-list li{list-style:none;display:flex;gap:26px;font-size:52px;color:var(--text);font-weight:600;line-height:1.3;align-items:flex-start}
+.st .big-list li::before{content:"✓";color:var(--green);font-weight:700}
+.st .cta{margin-top:auto;border:3px solid var(--cyan);background:rgba(0,212,255,.1);border-radius:34px;padding:60px 50px;text-align:center;display:grid;gap:30px}
+.st .cta .row{font-family:'JetBrains Mono',monospace;font-size:44px;color:var(--text)}
+.st .cta .num{font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:700;color:var(--cyan);letter-spacing:-1px}
+.st .badge{display:inline-flex;align-items:center;gap:18px;font-family:'JetBrains Mono',monospace;font-size:34px;color:var(--green);border:2px solid rgba(61,255,162,.45);border-radius:999px;padding:20px 40px;background:rgba(61,255,162,.08);align-self:flex-start}
+.st .arrow{font-family:'JetBrains Mono',monospace;color:var(--green);font-size:70px;font-weight:700}
+
+/* Banners 1200x630 */
+.b .inner{padding:70px 76px;justify-content:space-between}
+.b h2{font-size:74px;font-weight:700;color:var(--text);letter-spacing:-2px;line-height:1.05}
+.b h2 .hl{color:var(--cyan)}
+.b .meta{display:flex;gap:26px;flex-wrap:wrap}
+.b .meta span{font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--muted);border:2px solid var(--surface2);border-radius:999px;padding:12px 26px;background:rgba(18,32,69,.6)}
+.b .brandline{display:flex;justify-content:space-between;align-items:center}
+.browser{width:430px;border-radius:18px;overflow:hidden;border:2px solid var(--surface2);box-shadow:0 30px 60px rgba(0,0,0,.5);background:var(--surface)}
+.browser .bar{display:flex;gap:9px;padding:14px 16px;background:#0d1734;border-bottom:1px solid var(--surface2)}
+.browser .bar i{width:14px;height:14px;border-radius:50%;display:block}
+.browser .bar i:nth-child(1){background:#ff5f57}.browser .bar i:nth-child(2){background:#febc2e}.browser .bar i:nth-child(3){background:#28c840}
+.browser .body{padding:34px 30px;display:grid;gap:16px;background:linear-gradient(160deg,#0F1B3D,#0A1128)}
+.browser .body b{font-family:'Space Grotesk',sans-serif;color:var(--text);font-size:34px;letter-spacing:-.5px}
+.browser .body b i{color:var(--cyan);font-style:normal}
+.browser .body span{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:20px}
+.browser .body .btn{margin-top:8px;justify-self:start;background:var(--cyan);color:#061020;font-weight:700;font-size:22px;padding:14px 28px;border-radius:12px;font-family:'Space Grotesk',sans-serif}
+</style>
+</head>
+<body>
+
+<!-- S1 · Marca 1080x1080 -->
+<div class="canvas s1" data-d="s1" style="width:1080px;height:1080px">
+  <div class="inner">
+    <div class="logo"><span class="mark">&lt;/&gt;</span><span class="word">CodeCela</span></div>
+    <div class="rule"></div>
+    <h1 class="sg">Tu negocio,<br>compilado en <em>código</em>.</h1>
+    <p class="dek" style="font-size:40px">Sitios web para negocios locales<br>de Celaya, Guanajuato.</p>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">Desde $999 MXN</span>
+    </div>
+  </div>
+</div>
+
+<!-- S2 · Plan 0 1080x1080 -->
+<div class="canvas s2" data-d="s2" style="width:1080px;height:1080px">
+  <div class="inner" style="gap:8px">
+    <span class="eyebrow">Plan 0 · La prueba sin riesgo</span>
+    <div class="price"><b class="sg">$999</b><span>MXN</span></div>
+    <div class="card">
+      <ul class="check">
+        <li>Sitio funcional completo</li>
+        <li>Dominio + hosting incluido</li>
+        <li>Carga en menos de 3 segundos</li>
+      </ul>
+      <p class="note">Si en 15 días te decides,<br>se descuenta del paquete que elijas.</p>
+    </div>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">Sin letra chiquita</span>
+    </div>
+  </div>
+</div>
+
+<!-- S3 · Antes/Después 1080x1080 -->
+<div class="canvas s3" data-d="s3" style="width:1080px;height:1080px">
+  <div class="inner">
+    <span class="eyebrow">Antes · Después</span>
+    <h2 class="sg" style="margin-top:24px">De Facebook<br>a <span style="color:var(--cyan)">Google</span>.</h2>
+    <div class="grid">
+      <div class="panel bad">
+        <span class="tag">Antes</span>
+        <span class="item">"Búscanos en Facebook"</span>
+        <span class="item">Invisible en Google</span>
+        <span class="item">Sin menú ni precios</span>
+      </div>
+      <div class="panel good">
+        <span class="tag">Después</span>
+        <span class="item">Página propia en Google</span>
+        <span class="item">Menú y catálogo en celular</span>
+        <span class="item">WhatsApp directo</span>
+      </div>
+    </div>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">Hecho en Celaya</span>
+    </div>
+  </div>
+</div>
+
+<!-- ST1 · Precio -->
+<div class="canvas st" data-d="st1" style="width:1080px;height:1920px">
+  <div class="inner">
+    <span class="kicker">Sitios web en Celaya</span>
+    <h2 class="sg">Desde<br><span class="hl">$999</span><br>MXN</h2>
+    <p class="sub">Tu sitio listo en días,<br>no en semanas.</p>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">Plan 0</span>
+    </div>
+  </div>
+</div>
+
+<!-- ST2 · Incluido -->
+<div class="canvas st" data-d="st2" style="width:1080px;height:1920px">
+  <div class="inner">
+    <span class="kicker">Todo incluido</span>
+    <h2 class="sg" style="font-size:104px">Lo que ves,<br>lo que <span class="hlg">pagas</span>.</h2>
+    <ul class="big-list">
+      <li>Dominio + hosting incluido</li>
+      <li>Carga en menos de 3 s</li>
+      <li>Sin letra chiquita</li>
+    </ul>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">Precios claros</span>
+    </div>
+  </div>
+</div>
+
+<!-- ST3 · 15 días -->
+<div class="canvas st" data-d="st3" style="width:1080px;height:1920px">
+  <div class="inner">
+    <span class="kicker">Prueba sin riesgo</span>
+    <h2 class="sg"><span class="hl">15 días</span><br>para<br>decidirte.</h2>
+    <p class="sub">Si te decides en 15 días,<br>se descuenta del paquete<br>que elijas.</p>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">Plan 0 · $999</span>
+    </div>
+  </div>
+</div>
+
+<!-- ST4 · Celaya -->
+<div class="canvas st" data-d="st4" style="width:1080px;height:1920px">
+  <div class="inner" style="justify-content:center;gap:56px">
+    <span class="badge">Hecho en Celaya, Gto.</span>
+    <h2 class="sg" style="font-size:112px">Para los<br>negocios<br>de <span class="hlg">Celaya</span>.</h2>
+    <p class="sub" style="font-size:52px">Vidrieras, taquerías, salones,<br>consultorios… todo lo que<br>hace falta en la ciudad.</p>
+    <div class="foot" style="width:100%">
+      <span class="url">codecela.vercel.app</span>
+      <span class="pill">CodeCela</span>
+    </div>
+  </div>
+</div>
+
+<!-- ST5 · CTA -->
+<div class="canvas st" data-d="st5" style="width:1080px;height:1920px">
+  <div class="inner" style="justify-content:center;gap:60px;text-align:center;align-items:center">
+    <div class="logo"><span class="mark" style="font-size:96px">&lt;/&gt;</span></div>
+    <h2 class="sg" style="font-size:104px;text-align:center">¿Tu negocio<br>aparece en<br><span class="hl">Google</span>?</h2>
+    <div class="cta">
+      <span class="row">codecela.vercel.app</span>
+      <span class="num">461 529 6137</span>
+      <span class="row" style="color:var(--muted);font-size:34px">WhatsApp directo</span>
+    </div>
+  </div>
+</div>
+
+<!-- B1 · Banner promo 1200x630 -->
+<div class="canvas b" data-d="b1" style="width:1200px;height:630px">
+  <div class="inner">
+    <div class="brandline">
+      <div class="logo"><span class="mark" style="font-size:40px">&lt;/&gt;</span><span class="word" style="font-size:36px">CodeCela</span></div>
+      <span class="pill" style="font-size:24px;padding:12px 26px">Celaya, Gto.</span>
+    </div>
+    <div style="display:flex;gap:56px;align-items:center;justify-content:space-between">
+      <div style="display:grid;gap:28px">
+        <h2 class="sg">Sitios web<br>desde <span class="hl">$999 MXN</span></h2>
+        <div class="meta">
+          <span>Dominio + hosting</span><span>Listo en días</span><span>Prueba 15 días</span>
+        </div>
+      </div>
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="body">
+          <b><i>&lt;/&gt;</i> CodeCela</b>
+          <span>Tu negocio, compilado en código.</span>
+          <span class="btn">Quiero mi sitio</span>
+        </div>
+      </div>
+    </div>
+    <div class="brandline">
+      <span class="url" style="font-size:26px">codecela.vercel.app</span>
+      <span class="url" style="font-size:26px;color:var(--green)">WhatsApp 461 529 6137</span>
+    </div>
+  </div>
+</div>
+
+<!-- B2 · Banner share 1200x630 -->
+<div class="canvas b" data-d="b2" style="width:1200px;height:630px">
+  <div class="inner" style="justify-content:center;gap:44px;text-align:center;align-items:center">
+    <div class="logo"><span class="mark" style="font-size:56px">&lt;/&gt;</span><span class="word" style="font-size:52px">CodeCela</span></div>
+    <h2 class="sg" style="text-align:center;font-size:64px">Tu negocio, compilado en <span class="hl">código</span>.</h2>
+    <p class="dek" style="font-size:32px">Diseño web para negocios de Celaya, Gto. · Dominio + hosting incluido · Desde $999 MXN</p>
+    <span class="url">codecela.vercel.app</span>
+  </div>
+</div>
+
+<script>
+const d = new URLSearchParams(location.search).get('d');
+document.querySelectorAll('.canvas').forEach(el => { if (el.dataset.d === d) el.classList.add('on'); });
+</script>
+</body>
+</html>

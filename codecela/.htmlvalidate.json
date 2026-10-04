@@ -1,0 +1,9 @@
+{
+  "extends": "recommended",
+  "envs": ["html"],
+  "rules": {
+    "banana:alt": "error",
+    "banana:doctype": "error",
+    "banana:script-type": "error"
+  }
+}

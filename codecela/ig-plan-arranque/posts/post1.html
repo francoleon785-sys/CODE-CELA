@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>CodeCela — Post 1 · Precio</title>
+  <style>
+    @font-face { font-family: "Space Grotesk"; src: url("../composition/assets/fonts/SpaceGrotesk-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Space Grotesk"; src: url("../composition/assets/fonts/SpaceGrotesk-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Space Grotesk"; src: url("../composition/assets/fonts/SpaceGrotesk-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("../composition/assets/fonts/Inter-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("../composition/assets/fonts/Inter-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("../composition/assets/fonts/Inter-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { width: 1080px; height: 1080px; overflow: hidden; }
+    .post {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      background: #0a1128;
+      color: #f2f6ff;
+      font-family: "Inter", system-ui, sans-serif;
+      padding: 72px 72px 64px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .glow {
+      position: absolute;
+      width: 900px; height: 900px;
+      left: -300px; top: -340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.26), transparent 62%);
+      pointer-events: none;
+    }
+    .grid-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(242,246,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(242,246,255,0.04) 1px, transparent 1px);
+      background-size: 90px 90px;
+      pointer-events: none;
+    }
+    .ghost {
+      position: absolute;
+      right: -40px; bottom: 30px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 300px;
+      letter-spacing: -8px;
+      color: rgba(0, 212, 255, 0.05);
+      pointer-events: none;
+    }
+    .top {
+      position: relative; z-index: 2;
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .wordmark { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -1px; }
+    .wm-dot { color: #00d4ff; }
+    .meta { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 20px; color: #8fa3c7; letter-spacing: 1px; }
+    .rule { position: relative; z-index: 2; height: 2px; background: rgba(242,246,255,0.08); margin-top: 26px; }
+    .body { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .kicker {
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 24px; letter-spacing: 3px; color: #00d4ff;
+    }
+    .headline {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 78px;
+      line-height: 1.04;
+      letter-spacing: -3px;
+      margin-top: 24px;
+      max-width: 900px;
+    }
+    .headline em { font-style: normal; color: #3dffa2; }
+    .price-row { display: flex; align-items: baseline; gap: 18px; margin-top: 40px; }
+    .price {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 100px;
+      letter-spacing: -3px;
+      color: #00d4ff;
+      text-shadow: 0 0 70px rgba(0, 212, 255, 0.45);
+      white-space: nowrap;
+    }
+    .price-unit { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 36px; color: #8fa3c7; }
+    .sub {
+      font-size: 30px; font-weight: 500; color: #8fa3c7;
+      margin-top: 22px; line-height: 1.45; max-width: 860px;
+    }
+    .sub strong { color: #f2f6ff; font-weight: 600; }
+    .cta {
+      position: relative; z-index: 2;
+      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 16px;
+      background: #00d4ff; color: #0a1128;
+      font-weight: 600; font-size: 32px;
+      padding: 24px 44px; border-radius: 16px;
+      box-shadow: 0 0 60px rgba(0, 212, 255, 0.4);
+    }
+    .cta svg { width: 34px; height: 34px; fill: #0a1128; }
+    .foot {
+      position: relative; z-index: 2;
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 22px; color: #3dffa2; letter-spacing: 2px;
+      margin-top: 36px;
+    }
+    .foot .url { color: #8fa3c7; }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="glow"></div>
+    <div class="grid-bg"></div>
+    <div class="ghost">$2500</div>
+
+    <div class="top">
+      <div class="wordmark">&lt;/&gt; CodeCela<span class="wm-dot">.</span></div>
+      <div class="meta">Celaya · Gto.</div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="body">
+      <div class="kicker">// plan arranque</div>
+      <h1 class="headline">Tu negocio con página propia. <em>Sin plantillas.</em></h1>
+      <div class="price-row">
+        <div class="price">desde $2,500</div>
+        <div class="price-unit">MXN</div>
+      </div>
+      <p class="sub">Landing de 1 página a la medida de tu negocio. <strong>Dominio + hosting incluidos.</strong></p>
+      <div class="cta" style="margin-top: 40px;">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.8-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 .9.3.1.5.2.6.3.1.2.1.7-.1 1.3z"/></svg>
+        Escríbenos por WhatsApp
+      </div>
+    </div>
+
+    <div class="foot">
+      <span>461 529 6137</span>
+      <span class="url">codecela.vercel.app</span>
+    </div>
+  </div>
+</body>
+</html>
