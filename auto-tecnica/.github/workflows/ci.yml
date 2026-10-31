@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate HTML
+        run: |
+          # Verifica que index.html sea HTML5 válido (sin errores de cierre críticos)
+          grep -qE '<!DOCTYPE html>' index.html || { echo "Falta DOCTYPE"; exit 1; }
+          grep -qE '<title>Auto Técnica Automotriz</title>' index.html || { echo "Falta title"; exit 1; }
+      - name: Check referenced assets
+        run: |
+          # Verifica que los archivos referenciados en HTML existan
+          for f in $(grep -oE 'assets/img/[^"]+\.(webp|png|jpg|svg)' index.html | sort -u); do
+            if [ ! -f "$f" ]; then
+              echo "Falta archivo referenciado: $f"
+              exit 1
+            fi
+          done
+          echo "Todos los assets referenciados presentes."

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/img/hero.webp
+Disallow: /assets/img/taller.webp
+Sitemap: https://autotecnica.vercel.app/sitemap.xml
