@@ -111,7 +111,8 @@ section { padding-inline: var(--pad); padding-block: var(--space); }
 .method { background: var(--bg2); }
 .method .timeline { position: relative; padding-left: 28px; border-left: 1px solid var(--line); margin-top: 36px; }
 .method .timeline::before { content: ""; position: absolute; top: 6px; left: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 4px rgba(239,68,68,0.22); }
-.method .step { padding: 24px 0 28px; }
+.method .step { padding: 24px 0 28px; border-left: 2px solid var(--line); padding-left: 22px; transition: border-left-color .3s ease, background .3s ease; border-radius: 0 12px 12px 0; }
+.method .step:hover { border-left-color: var(--acc); background: rgba(239,68,68,0.04); }
 .method .step .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--acc); text-transform: uppercase; margin-bottom: 6px; }
 .method .step h3 { font-size: 22px; }
 .method .step p { color: var(--mut); margin-top: 6px; max-width: 60ch; }
@@ -119,7 +120,8 @@ section { padding-inline: var(--pad); padding-block: var(--space); }
 /* 03 Nosotros — filas con palomita */
 .about { background: var(--bg); }
 .about .rows { display: flex; flex-direction: column; gap: 0; margin-top: 36px; }
-.about .row { display: grid; grid-template-columns: auto 1fr; gap: 14px 20px; align-items: start; padding: 22px 0; border-top: 1px solid var(--line); }
+.about .row { display: grid; grid-template-columns: auto 1fr; gap: 14px 20px; align-items: start; padding: 22px 0; border-top: 1px solid var(--line); transition: background .25s ease; border-radius: 0 12px 12px 0; }
+.about .row:hover { background: rgba(239,68,68,0.03); }
 .about .row .check { flex-shrink: 0; width: 22px; height: 22px; color: var(--acc); }
 .about .row h4 { font-size: 20px; letter-spacing: -0.02em; margin-bottom: 4px; }
 .about .row p { color: var(--mut); font-size: 15px; line-height: 1.45; max-width: 72ch; }
@@ -132,7 +134,8 @@ section { padding-inline: var(--pad); padding-block: var(--space); }
 .trust-img img { width: 100%; height: auto; object-fit: cover; }
 .trust-img .badge { position: absolute; bottom: 14px; right: 14px; background: rgba(12,12,14,0.92); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
 .trust-points { display: flex; flex-direction: column; gap: 22px; }
-.trust-points .pt { display: flex; gap: 14px; align-items: flex-start; }
+.trust-points .pt { display: flex; gap: 14px; align-items: flex-start; padding: 14px; border-radius: 12px; border: 1px solid transparent; transition: border-color .25s ease, background .25s ease; }
+.trust-points .pt:hover { border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.05); }
 .trust-points .pt .check { flex-shrink: 0; width: 22px; height: 22px; color: var(--acc); }
 .trust-points .pt h4 { font-size: 18px; letter-spacing: -0.01em; }
 .trust-points .pt p { color: var(--mut); font-size: 14px; }
@@ -141,7 +144,8 @@ section { padding-inline: var(--pad); padding-block: var(--space); }
 .reviews { background: var(--bg); }
 .review-grid { display: grid; gap: 20px; margin-top: 36px; }
 @media (min-width: 720px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
-.review { background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+.review { background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 26px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.review:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,0.35); border-color: rgba(239,68,68,0.35); }
 .review .stars { color: var(--acc); font-weight: 700; letter-spacing: 0.02em; margin-bottom: 10px; font-size: 15px; }
 .review blockquote { font-size: 16px; line-height: 1.4; margin: 0; color: var(--ink); }
 .review .meta { font-family: var(--font-mono); font-size: 11px; color: var(--mut); margin-top: 14px; display: flex; gap: 12px; }
