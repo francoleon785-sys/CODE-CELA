@@ -98,11 +98,14 @@ section { padding-inline: var(--pad); padding-block: var(--space); }
 /* 01 Servicios — lista editorial */
 .services { background: var(--bg); }
 .services .list { display: flex; flex-direction: column; gap: 2px; }
-.services .item { display: grid; grid-template-columns: auto 1fr auto; gap: 16px 24px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--line); }
-.services .item .num { font-family: var(--font-mono); font-weight: 500; color: var(--acc); font-size: 15px; letter-spacing: 0.02em; min-width: 28px; }
-.services .item h3 { font-size: clamp(22px, 3vw, 32px); letter-spacing: -0.03em; }
-.services .item p { font-size: 15px; color: var(--mut); } /* descripción corta reformulando nombre */
-.services .item .arrow { color: var(--acc); font-size: 22px; }
+.services .item { display: grid; grid-template-columns: auto 1fr auto; gap: 16px 24px; align-items: start; padding: 26px 22px; border-bottom: 1px solid var(--line); border-left: 3px solid var(--line); border-radius: 0 16px 16px 0; background: linear-gradient(90deg, rgba(239,68,68,0.06), rgba(20,20,23,0)); transition: border-left-color .3s ease, transform .35s ease, background .35s ease; }
+.services .item:hover { border-left-color: var(--acc); transform: translateX(6px); background: linear-gradient(90deg, rgba(239,68,68,0.10), rgba(20,20,23,0)); }
+.services .item .num { font-family: var(--font-mono); font-weight: 500; color: var(--acc); font-size: 18px; letter-spacing: 0.02em; min-width: 36px; line-height: 1; transition: transform .25s ease; }
+.services .item:hover .num { transform: scale(1.12) rotate(-3deg); }
+.services .item .item-body h3 { font-size: clamp(22px, 3vw, 32px); letter-spacing: -0.03em; margin-bottom: 6px; }
+.services .item .item-body p { font-size: 15px; color: var(--mut); line-height: 1.45; }
+.services .item .arrow { color: var(--acc); font-size: 24px; transition: transform .25s ease, opacity .25s ease; opacity: .7; }
+.services .item:hover .arrow { transform: translateX(4px); opacity: 1; }
 
 /* 02 Método — línea de tiempo */
 .method { background: var(--bg2); }
@@ -178,5 +181,5 @@ section { padding-inline: var(--pad); padding-block: var(--space); }
 .whatsapp-float svg { width: 24px; height: 24px; fill: currentColor; }
 
 /* Reveals */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease-out, transform .7s ease-out; }
-.reveal.is-in { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 0; transform: translateY(30px) scale(.98); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+.reveal.is-in { opacity: 1; transform: translateY(0) scale(1); }
