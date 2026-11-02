@@ -1,0 +1,8 @@
+{
+  "alt-require": true,
+  "attr-lowercase": true,
+  "attr-value-double-quotes": true,
+  "id-unique": true,
+  "tag-pair": true,
+  "tagname-lowercase": true
+}

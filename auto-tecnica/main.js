@@ -18,10 +18,11 @@
   document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
   /* ---- WhatsApp float (a los 400px) ---- */
-  const wa = document.getElementById('wa-float');
+  const wa = document.getElementById('whatsappFabContainer');
   let showing = false;
   function toggleWa() {
     const y = window.scrollY || document.documentElement.scrollTop;
+    if (!wa) return;
     if (y > 400 && !showing) {
       showing = true;
       wa.classList.add('is-visible');
@@ -34,7 +35,7 @@
   toggleWa(); // estado inicial
 
   /* ---- Hero parallax sutil (translateY) ---- */
-  const heroImg = document.querySelector('.hero img');
+  const heroImg = document.querySelector('.hero-bg-photo');
   if (heroImg) {
     function heroParallax() {
       const y = window.scrollY || document.documentElement.scrollTop;
@@ -47,7 +48,7 @@
   }
 
   /* ---- Línea a línea del H1 (solo hero) ---- */
-  const heroH1 = document.querySelector('.hero h1');
+  const heroH1 = document.querySelector('.hero-h1');
   if (heroH1) {
     const lines = heroH1.querySelectorAll('span');
     lines.forEach((line, i) => {
@@ -66,3 +67,5 @@
     });
   }
 })();
+
+

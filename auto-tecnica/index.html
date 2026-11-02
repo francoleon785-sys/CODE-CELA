@@ -1,4 +1,12 @@
 <!DOCTYPE html><html lang="es-MX"><head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ39DSTSV1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MZ39DSTSV1');
+  </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s),
@@ -11,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Auto Técnica Automotriz | Taller Mecánico en Celaya, Gto.</title>
-<meta content="Taller mecánico en Celaya, Guanajuato. Diagnóstico preciso por ingeniero mecánico antes de reparar y trabajos garantizados. Av. Tecnológico." name="description">
+<meta content="Taller mecánico en Celaya, Guanajuato. Diagnóstico preciso por ingeniero mecánico antes de reparar y trabajos garantizados. Servicio de grúa 24/7 disponible todo el año. Av. Tecnológico." name="description">
 <meta content="#0c0c0e" name="theme-color">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
@@ -40,6 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="styles.css?v=3.0">
 
 <script type="application/ld+json">
+  [
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -80,14 +89,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "ratingValue": "4.7",
       "reviewCount": "13"
     }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Servicio de grúa 24/7",
+    "provider": {
+      "@type": "AutoRepair",
+      "name": "Auto Técnica Automotriz"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "México (excepto Estado de México y CDMX)"
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "servicePhone": "+524612547426",
+      "description": "Línea exclusiva de grúa 24/7"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Tarifas de Grúa",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Zona metropolitana" },
+          "price": "800",
+          "priceCurrency": "MXN"
+        }
+      ]
+    }
   }
+  ]
   </script>
   <!-- Google Site Verification (activar al confirmar código con Google Search Console) -->
 
 
-  <!-- Google Analytics 4 — ACTIVAR SOLO CUANDO EL CLIENTE CONFIRME EL ID -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -119,6 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav aria-label="Navegación principal">
 <ul class="nav-links">
 <li class=""><a class="nav-link" href="#servicios">Servicios</a></li>
+<li class=""><a class="nav-link" href="#grua">Grúa</a></li>
 <li class=""><a class="nav-link" href="#metodo">Método</a></li>
 <li class=""><a class="nav-link" href="#nosotros">Nosotros</a></li>
 <li class=""><a class="nav-link" href="#confianza">Confianza</a></li>
@@ -348,6 +386,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 </section>
+
+<!-- SECCIÓN GRÚA -->
+<section aria-labelledby="grua-heading" class="section section-bg2" id="grua">
+  <div class="container">
+    <span class="mono-eyebrow">Servicio 24/7</span>
+    <h2 class="section-title" id="grua-heading">Servicio de grúa 24/7</h2>
+    <p class="section-desc">Grúa de plataforma profesional, disponible todo el año.</p>
+    
+    <div class="grua-grid">
+      <div class="grua-info reveal is-in">
+        <h3>Características</h3>
+        <ul>
+          <li>Grúa de plataforma profesional.</li>
+          <li>Capacidad para vehículos de hasta 7 toneladas.</li>
+          <li>Atención 24 horas, los 7 días de la semana, los 365 días del año.</li>
+          <li>Cobertura en toda la República Mexicana, excepto Estado de México y Ciudad de México.</li>
+        </ul>
+        <div class="grua-visual-temp">
+          <!-- TODO: foto real de la grúa -->
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 18h22M12 12h9l2-4H3l2 4"/><path d="M15 18V9"/><path d="M5 18V9"/><path d="M12 12h-2"/></svg>
+        </div>
+      </div>
+      
+      <div class="grua-tarifas reveal is-in">
+        <h3>Tarifas</h3>
+        <table class="schedule-table">
+          <tr><td>Zona metropolitana</td><td>$800 MXN</td></tr>
+          <tr><td>Maniobras adicionales</td><td>Costo adicional</td></tr>
+          <tr><td>Servicio foráneo</td><td>Según kilometraje</td></tr>
+          <tr><td>Maniobras foráneas</td><td>Costo adicional</td></tr>
+        </table>
+        <p class="visit-note">El precio del servicio foráneo se determina según la distancia recorrida.</p>
+        <div class="grua-warning" style="background: rgba(239, 68, 68, 0.1); padding: 15px; border-radius: 8px; border: 1px solid var(--acc); margin-top: 15px; color: var(--acc);">
+          <strong>Restricción:</strong> No se realizan servicios en Estado de México ni en Ciudad de México.
+        </div>
+        
+        <div class="grua-contacto" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
+          <a href="tel:+524612547426" class="btn btn-primary">Llamar a la grúa ahora</a>
+          <a href="https://wa.me/524612547426?text=Hola,%20necesito%20el%20servicio%20de%20grúa." class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp Grúa</a>
+          
+          <a href="tel:+524612066573" class="btn btn-secondary">Llamar Taller</a>
+          <a href="https://wa.me/524612066573?text=Hola,%20necesito%20el%20servicio%20de%20grúa." class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp Taller</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 4. 02 MÉTODO (PROCESO DE 4 PASOS EN FILA HORIZONTAL DE 4 COLUMNAS) -->
 <section aria-labelledby="metodo-heading" class="section section-bg2" id="metodo">
 <div class="container">
