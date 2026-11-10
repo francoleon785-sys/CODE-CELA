@@ -213,8 +213,6 @@ section { padding: 5rem 1.5rem; scroll-margin-top: calc(var(--nav-h) + .75rem); 
 .about-cta { color: var(--accent); margin-top: 1rem; font-size: .92rem; font-weight: 600; }
 .btn-row { display: flex; gap: .9rem; flex-wrap: wrap; margin-top: 1.2rem; }
 .about-ph img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--surface-2); }
-/* Espacio reservado para la foto del fundador (se reemplaza por <img> al subirla) */
-.founder-slot { width: 100%; aspect-ratio: 1; border-radius: var(--radius); border: 1px solid var(--surface-2); background: var(--surface); }
 .about-copy p.founder-name { margin-top: 0; font-family: var(--display); font-size: 1.6rem; font-weight: 700; line-height: 1.2; color: var(--text); }
 .about-copy p.founder-role { margin-top: .25rem; margin-bottom: 1rem; font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); }
 .about-ph .ph-tag { display: inline-block; margin-top: .5rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); background: var(--surface); padding: .22rem .55rem; border-radius: 6px; border: 1px dashed var(--surface-2); }
