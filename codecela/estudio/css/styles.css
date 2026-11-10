@@ -1,16 +1,18 @@
 /* CodeCela — sitio de marca · "Manifiesto premium"
-   Dirección A elevada: tipografía variable, grano, motion con intención. */
+   Dirección A elevada: tipografía variable, grano, motion con intención.
+   Paleta alineada al sitio oficial (navy + cyan). */
 
 :root {
-  --paper: #FCFCFA;
-  --ink: #0F0F0F;
-  --mut: #6B6B66;
-  --line: #E4E4DE;
-  --accent: #EA580C;
-  --accent-ink: #FCFCFA;
-  --shade: rgba(234, 88, 12, 0.07);
-  --stmt-bg: #0F0F0F;
-  --stmt-fg: #FCFCFA;
+  color-scheme: dark;
+  --paper: #0A1128;
+  --ink: #F2F6FF;
+  --mut: #8FA3C7;
+  --line: rgba(242, 246, 255, 0.13);
+  --accent: #00D4FF;
+  --accent-ink: #0A1128;
+  --shade: rgba(0, 212, 255, 0.08);
+  --stmt-bg: #0F1B3D;
+  --stmt-fg: #F2F6FF;
   --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -18,15 +20,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #101012;
-    --ink: #EDEDE8;
-    --mut: #9A9A93;
-    --line: #26262B;
-    --accent: #FF7A3D;
-    --accent-ink: #101012;
-    --shade: rgba(255, 122, 61, 0.09);
-    --stmt-bg: #08080A;
-    --stmt-fg: #EDEDE8;
+    --paper: #06091A;
+    --ink: #E8EDFA;
+    --mut: #7E92BC;
+    --line: rgba(242, 246, 255, 0.10);
+    --accent: #00D4FF;
+    --accent-ink: #06091A;
+    --shade: rgba(0, 212, 255, 0.10);
+    --stmt-bg: #0C1533;
+    --stmt-fg: #E8EDFA;
   }
 }
 

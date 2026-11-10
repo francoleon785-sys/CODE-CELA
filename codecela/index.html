@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CodeCela — Sitios web para negocios de Celaya, Guanajuato</title>
-  <meta name="description" content="CodeCela diseña sitios web para negocios locales de Celaya, Gto. Si tu negocio no aparece en Google, aquí lo compilamos. Planes desde $999 MXN.">
+  <meta name="description" content="CodeCela diseña sitios web para negocios locales de Celaya, Gto. Si tu negocio no aparece en Google, aquí lo compilamos. Pide tu boceto gratis, sin compromiso.">
   <link rel="canonical" href="https://codecela.vercel.app/">
 
   <!-- Google tag (gtag.js) -->
@@ -26,7 +26,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="CodeCela — Tu negocio, compilado en código.">
-  <meta property="og:description" content="Sitios web para negocios de Celaya. Diseño real, precios claros. Prueba sin riesgo desde $999.">
+  <meta property="og:description" content="Sitios web para negocios de Celaya. Diseño real, precios claros. Boceto gratis, sin compromiso.">
   <meta property="og:image" content="https://codecela.vercel.app/assets/og/og-codecela.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -50,7 +50,8 @@
     "areaServed":{"@type":"City","name":"Celaya"},
     "address":{"@type":"PostalAddress","addressLocality":"Celaya","addressRegion":"Gto.","addressCountry":"MX"},
     "serviceType":["Diseño web","SEO local","Landing pages","Panel de administración"],
-    "priceRange":"MXN 999–9000"
+    "priceRange":"MXN 2500–9000",
+    "founder":{"@type":"Person","name":"Franco Iván León Ruiz","jobTitle":"Fundador de CodeCela"}
   }
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -173,21 +174,23 @@
       <div class="container">
         <p class="kicker-comment" data-reveal>PAQUETES</p>
         <h2 class="sec-title" data-reveal>Paquetes. Sin letras chiquitas.</h2>
-        <p class="sec-dek" data-reveal>Empieza por donde quieras. Si dudas, el Plan 0 es la forma más fácil de conocer mi trabajo sin arriesgar nada.</p>
+        <p class="sec-dek" data-reveal>Empieza por donde quieras. Si dudas, pide tu boceto gratis: ves tu página funcionando antes de pagar un peso.</p>
+        <!-- Cada paquete es una tarjeta .plan con: etiqueta, precio, nombre, lista y botón.
+             Para editar un precio o un punto, cambia el texto de su tarjeta. -->
         <div class="plans">
-          <!-- Plan 0 — destacado -->
-          <div class="plan card plan--featured" data-reveal>
-            <span class="plan-tag plan-tag--accent">LA PRUEBA SIN RIESGO</span>
-            <div class="price">$999 <span>MXN</span></div>
-            <h3>Plan 0</h3>
+          <!-- Boceto gratis — destacado, siempre primero -->
+          <div class="plan card plan--featured plan--free" data-reveal>
+            <span class="plan-tag plan-tag--accent">SIN COMPROMISO</span>
+            <div class="price">$0 <span>MXN</span></div>
+            <h3>Boceto gratis</h3>
             <ul>
-              <li>Sitio funcional completo</li>
-              <li>En subdominio temporal</li>
-              <li>Marca de agua "Sitio de prueba — CodeCela"</li>
-              <li>Botones de contacto no funcionales (es una prueba)</li>
+              <li>Diseño de la página principal con tu marca, colores y fotos</li>
+              <li>Lo ves funcionando en un enlace, desde tu celular</li>
+              <li>Sin compromiso: si no te convence, no pagas nada</li>
+              <li>Si te gusta, lo convertimos en tu sitio completo</li>
             </ul>
-            <p class="plan-note">Si en 15 días te decides, se descuenta del paquete que elijas.</p>
-            <div class="plan-cta"><a href="#contacto" class="btn btn--ghost btn--block">Hacer la prueba por $999</a></div>
+            <div class="plan-cta"><a href="https://wa.me/524615296137?text=Hola%20Franco%2C%20quiero%20mi%20boceto%20gratis" class="btn btn--accent btn--block" target="_blank" rel="noopener">Pide tu boceto gratis</a></div>
+            <p class="plan-fine">Sujeto a disponibilidad. Ver <a href="/terminos/">términos y condiciones</a>.</p>
           </div>
           <!-- Arranque -->
           <div class="plan card" data-reveal>
@@ -234,20 +237,26 @@
       </div>
     </section>
 
-    <!-- ============ SOBRE CODECELA ============ -->
-    <section id="sobre" aria-label="Sobre CodeCela">
+    <!-- ============ SOBRE CODECELA / FUNDADOR ============ -->
+    <section id="sobre" aria-label="Sobre CodeCela y su fundador">
       <div class="container">
-        <p class="kicker-comment" data-reveal>SOBRE CODECELA</p>
+        <p class="kicker-comment" data-reveal>SOBRE MÍ</p>
         <h2 class="sec-title" data-reveal>Diseño web para negocios que sí quieren ser encontrados.</h2>
         <div class="about-grid">
-          <div class="about-ph" data-reveal>
-            <img src="assets/img/torty.jpg" width="600" height="600" alt="Foto de Torty, diseñador web de Celaya">
-            <span class="ph-tag">torty.jpg · 600×600</span>
-          </div>
+          <!-- Foto del fundador (en móvil queda arriba del texto).
+               PENDIENTE: subir la foto a codecela/assets/img/fundador.jpg (cuadrada, 800×800 aprox.)
+               y reemplazar el <div class="founder-slot"> por:
+               <img src="assets/img/fundador.jpg" width="800" height="800" loading="lazy" decoding="async"
+                    alt="Franco Iván León Ruiz, fundador de CodeCela"> -->
+          <figure class="about-ph" data-reveal>
+            <div class="founder-slot" role="img" aria-label="Franco Iván León Ruiz, fundador de CodeCela"></div>
+          </figure>
           <div class="about-copy" data-reveal>
-            <p class="lead">CodeCela es un estudio de diseño web enfocado en negocios locales de Celaya: talleres, restaurantes, boutiques, floristerías, pastelerías y barberías que hoy dependen solo de redes sociales o de Google Maps para que los encuentren.</p>
-            <p>Muchos de estos negocios pierden clientes todos los días por algo simple: no tienen un lugar donde alguien pueda ver su menú, su catálogo o su forma de contactar sin tener que escribirles primero. Un sitio propio resuelve eso.</p>
-            <p>En CodeCela construimos sitios rápidos —cargan en menos de 3 segundos—, con identidad visual propia y listos en días, no en semanas. Cada proyecto se entrega con dominio a nombre del cliente y hosting con HTTPS incluido, sin letras chiquitas.</p>
+            <p class="founder-name">Franco Iván León Ruiz</p>
+            <p class="founder-role">Fundador de CodeCela</p>
+            <p class="lead">Soy Franco, fundador de CodeCela. Empecé este estudio porque vi que muchos negocios de Celaya pierden clientes solo por no tener un sitio propio. Yo diseño y construyo cada proyecto personalmente.</p>
+            <p>Trabajo con talleres, restaurantes, boutiques, floristerías, pastelerías y barberías que hoy dependen solo de redes sociales o de Google Maps para que los encuentren. Pierden clientes todos los días por algo simple: no tienen un lugar donde alguien vea su menú, su catálogo o cómo contactarlos sin escribirles primero. Un sitio propio resuelve eso.</p>
+            <p>Hago sitios rápidos —cargan en menos de 3 segundos—, con identidad visual propia y listos en días, no en semanas. Cada proyecto lo entrego con el dominio a tu nombre y hosting con HTTPS incluido, sin letras chiquitas.</p>
             <p class="about-cta">¿Tu negocio todavía no tiene sitio propio? Hablemos.</p>
             <div class="btn-row">
               <a href="mailto:franco.codecela@gmail.com" class="btn">Correo</a>
@@ -280,7 +289,7 @@
             <label for="c-plan">¿Qué necesitas?</label>
             <select id="c-plan" name="plan">
               <option value="">Selecciona un plan</option>
-              <option value="0">Plan 0 · $999</option>
+              <option value="boceto">Boceto gratis · $0</option>
               <option value="arranque">Arranque · $2,500–3,500</option>
               <option value="negocio">Negocio · $5,500–7,000</option>
               <option value="medida">A la Medida · desde $9,000</option>
@@ -305,6 +314,7 @@
         <a href="/">&lt;/&gt; CodeCela</a>
         <a href="https://wa.me/524615296137" class="link--primary" target="_blank" rel="noopener">WhatsApp 461 529 6137</a>
         <a href="mailto:franco.codecela@gmail.com">Correo</a>
+        <a href="/terminos/">Términos y condiciones</a>
       </div>
       <div>Hecho a mano en Celaya, Gto. © 2026 · Sin plantillas, sin clichés.</div>
     </div>

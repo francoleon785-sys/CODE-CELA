@@ -196,6 +196,13 @@ section { padding: 5rem 1.5rem; scroll-margin-top: calc(var(--nav-h) + .75rem); 
 .plan li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
 .plan-note { color: var(--accent); font-size: .82rem; margin-top: .6rem; }
 .plan-cta { margin-top: 1rem; }
+/* Boceto gratis: destacado con el verde de acento para separarlo de los planes de pago */
+.plan--free { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 22px 55px rgba(61,255,162,0.12); background: linear-gradient(160deg, rgba(61,255,162,0.07), transparent 55%), var(--surface); }
+.plan--free .price { color: var(--accent); }
+.btn--accent { background: var(--accent); color: var(--bg); box-shadow: 0 4px 14px rgba(61,255,162,0.2); }
+.btn--accent:hover { box-shadow: 0 18px 40px rgba(61,255,162,0.25); }
+.plan-fine { margin-top: .7rem; font-size: .75rem; color: var(--muted); text-align: center; }
+.plan-fine a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
 .honesty-strip { margin-top: 2.5rem; padding: 1.4rem 1.6rem; background: var(--surface); border: 1px solid var(--surface-2); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); }
 .honesty-strip p { color: var(--muted); font-size: .92rem; }
 
@@ -206,6 +213,10 @@ section { padding: 5rem 1.5rem; scroll-margin-top: calc(var(--nav-h) + .75rem); 
 .about-cta { color: var(--accent); margin-top: 1rem; font-size: .92rem; font-weight: 600; }
 .btn-row { display: flex; gap: .9rem; flex-wrap: wrap; margin-top: 1.2rem; }
 .about-ph img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--surface-2); }
+/* Espacio reservado para la foto del fundador (se reemplaza por <img> al subirla) */
+.founder-slot { width: 100%; aspect-ratio: 1; border-radius: var(--radius); border: 1px solid var(--surface-2); background: var(--surface); }
+.about-copy p.founder-name { margin-top: 0; font-family: var(--display); font-size: 1.6rem; font-weight: 700; line-height: 1.2; color: var(--text); }
+.about-copy p.founder-role { margin-top: .25rem; margin-bottom: 1rem; font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); }
 .about-ph .ph-tag { display: inline-block; margin-top: .5rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); background: var(--surface); padding: .22rem .55rem; border-radius: 6px; border: 1px dashed var(--surface-2); }
 
 /* ---------- 14. Contacto ---------- */
@@ -230,6 +241,22 @@ section { padding: 5rem 1.5rem; scroll-margin-top: calc(var(--nav-h) + .75rem); 
 .footer-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .footer-links a { color: var(--muted); font-size: .85rem; padding-block: .3rem; }
 .footer-links a:hover { color: var(--text); }
+
+/* ---------- 15b. Páginas legales (/terminos/) ---------- */
+.legal { padding-top: calc(var(--nav-h) + 3rem); }
+.legal .container { max-width: 760px; }
+.legal-updated { font-family: var(--mono); font-size: .78rem; color: var(--muted); margin-top: .8rem; }
+.legal-toc { margin-top: 2rem; padding: 1.2rem 1.4rem; columns: 2 220px; font-size: .88rem; }
+.legal-toc ol { padding-left: 1.4rem; }
+.legal-toc li { padding-block: .15rem; color: var(--muted); break-inside: avoid; }
+.legal-toc a:hover { color: var(--primary); }
+.legal h2 { font-size: 1.4rem; margin-top: 2.6rem; scroll-margin-top: calc(var(--nav-h) + 1rem); }
+.legal h2 .num { font-family: var(--mono); color: var(--primary); font-size: 1rem; margin-right: .4rem; }
+.legal p, .legal ul { color: var(--muted); margin-top: .7rem; font-size: .95rem; }
+.legal ul { padding-left: 1.2rem; }
+.legal li + li { margin-top: .35rem; }
+.legal strong { color: var(--text); font-weight: 600; }
+.legal a:not(.btn) { color: var(--primary); }
 
 /* ---------- 16. Efectos ---------- */
 [data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity .8s var(--ease-soft), transform .8s var(--ease-soft); }
